@@ -3,6 +3,7 @@ import path from 'path';
 
 export default defineConfig({
   test: {
+    include: ['src/**/*.test.ts'],
     environment: 'happy-dom',
     globals: true,
     setupFiles: ['./vitest.setup.ts'],

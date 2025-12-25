@@ -21,9 +21,13 @@ export function initializeMermaid(): void {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   global.window = dom.window as any;
 
+  // Get Element from the JSDOM window after it's set up
+  const Element = dom.window.Element;
+
   // Mock SVG methods that JSDOM doesn't implement
   // These are required by Mermaid for diagram rendering
-  if (!Element.prototype.getBBox) {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  if (!(Element.prototype as any).getBBox) {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     (Element.prototype as any).getBBox = function() {
       return {
@@ -35,7 +39,8 @@ export function initializeMermaid(): void {
     };
   }
 
-  if (!Element.prototype.getComputedTextLength) {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  if (!(Element.prototype as any).getComputedTextLength) {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     (Element.prototype as any).getComputedTextLength = function() {
       return 100;
