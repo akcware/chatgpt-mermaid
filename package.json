@@ -1,24 +1,48 @@
 {
   "name": "chatgpt-mermaid",
-  "version": "0.1.0",
+  "version": "1.0.0",
+  "description": "A ChatGPT App for validating, rendering, and exporting Mermaid diagrams using OpenAI Apps SDK (MCP)",
   "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=20.0.0"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "test": "vitest",
+    "test:ui": "vitest --ui",
+    "test:coverage": "vitest --coverage",
+    "mcp:dev": "tsx src/mcp/index.ts",
+    "mcp:build": "tsc --project tsconfig.mcp.json",
+    "mcp:start": "node dist/mcp/index.js"
   },
   "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.25.1",
+    "dompurify": "^3.3.1",
+    "isomorphic-dompurify": "^2.34.0",
+    "jsdom": "^27.3.0",
+    "mermaid": "^11.12.2",
     "next": "16.1.1",
     "react": "19.2.3",
     "react-dom": "19.2.3"
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.1",
+    "@types/dompurify": "^3.2.0",
+    "@types/jsdom": "^27.0.0",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "@vitest/ui": "^4.0.16",
     "eslint": "^9",
     "eslint-config-next": "16.1.1",
-    "typescript": "^5"
+    "happy-dom": "^20.0.11",
+    "tsx": "^4.21.0",
+    "typescript": "^5",
+    "vitest": "^4.0.16"
   }
 }
