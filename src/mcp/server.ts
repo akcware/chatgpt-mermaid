@@ -141,3 +141,28 @@ export async function startMcpServer(): Promise<void> {
   console.error('Mermaid MCP Server running on stdio');
 }
 
+/**
+ * Start HTTP health check server (for deployment platforms)
+ */
+export async function startHealthCheckServer(port: number = 8080): Promise<void> {
+  const http = await import('http');
+  
+  const server = http.createServer((req, res) => {
+    if (req.url === '/health' || req.url === '/') {
+      res.writeHead(200, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify({
+        status: 'healthy',
+        service: 'mermaid-mcp-server',
+        timestamp: new Date().toISOString(),
+      }));
+    } else {
+      res.writeHead(404);
+      res.end('Not Found');
+    }
+  });
+
+  server.listen(port, () => {
+    console.error(`Health check server listening on port ${port}`);
+  });
+}
+
