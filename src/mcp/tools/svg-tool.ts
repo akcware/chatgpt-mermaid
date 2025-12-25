@@ -1,5 +1,5 @@
-import { generateSvgExport } from '@/core/diagram/export';
-import { sanitizeSvg } from '@/core/security/sanitize';
+import { generateSvgExport } from '../../core/diagram/export';
+import { sanitizeSvg } from '../../core/security/sanitize';
 
 /**
  * MCP tool handler for svg export operation

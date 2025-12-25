@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { sanitizeSvg } from '../security/sanitize';
+import { sanitizeSvg } from '../security/sanitize.js';
 
 describe('sanitizeSvg', () => {
   describe('Security - XSS Prevention', () => {

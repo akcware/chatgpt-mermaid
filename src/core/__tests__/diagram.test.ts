@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
-import { verifyMermaidCode } from '../diagram/verify';
-import { renderMermaidToSvg } from '../diagram/render';
+import { verifyMermaidCode } from '../diagram/verify.js';
+import { renderMermaidToSvg } from '../diagram/render.js';
 
 describe('verifyMermaidCode', () => {
   describe('Valid Mermaid Code', () => {

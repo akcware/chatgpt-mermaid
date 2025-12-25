@@ -1,5 +1,5 @@
 import { describe, it, expect, beforeEach } from 'vitest';
-import { rateLimiter, getClientIp } from '../security/rate-limit';
+import { rateLimiter, getClientIp } from '../security/rate-limit.js';
 
 describe('RateLimiter', () => {
   beforeEach(() => {

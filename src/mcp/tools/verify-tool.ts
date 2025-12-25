@@ -1,4 +1,4 @@
-import { verifyMermaidCode } from '@/core/diagram/verify';
+import { verifyMermaidCode } from '../../core/diagram/verify';
 
 /**
  * MCP tool handler for verify operation

@@ -1,5 +1,5 @@
-import { renderMermaidToSvg } from '@/core/diagram/render';
-import { sanitizeSvg } from '@/core/security/sanitize';
+import { renderMermaidToSvg } from '../../core/diagram/render';
+import { sanitizeSvg } from '../../core/security/sanitize';
 
 /**
  * MCP tool handler for render operation

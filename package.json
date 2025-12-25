@@ -16,7 +16,7 @@
     "test:ui": "vitest --ui",
     "test:coverage": "vitest --coverage",
     "mcp:dev": "tsx src/mcp/index.ts",
-    "mcp:build": "tsc --project tsconfig.mcp.json && tsc-alias -p tsconfig.mcp.json",
+    "mcp:build": "tsc --project tsconfig.mcp.json && tsc-alias -p tsconfig.mcp.json && node scripts/fix-imports.js",
     "mcp:start": "node dist/mcp/index.js"
   },
   "dependencies": {
